@@ -14,6 +14,7 @@ app.controller('LoginCtrl', function ($scope,loginService,$http,$cookies) {
     $scope.Login = function(login) {
 			console.log($scope.login);
 		  var promise = loginService.fetch($scope.login);
+
 			promise.then(
 						function (response){
 							console.log(response.data);
