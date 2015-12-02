@@ -18,13 +18,13 @@ angular.module('myTestAppApp').service('loginService', function ($http, $q, $log
 $http({method: method, data: postData, url: url, headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).
 					then(function(data) {
 				//deferred.resolve(data);
-				//$cookies.put('userData', data);	
+				$cookies.put('userData', data);	
 						
 					}, function(error) {
 						$log.error(error);
 						deferred.reject(error);
 				});
-		//		console.log($cookies.get('userData'));
+				console.log($cookies.get('userData'));
 				return deferred.promise;
 			}
     }

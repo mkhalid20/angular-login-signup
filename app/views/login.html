@@ -5,7 +5,7 @@
                                 <label class="col-sm-5 control-label no-padding-right" for="email">Email</label>
                                 <div class="col-sm-7">
                                     <span class="block input-icon input-icon-right">
- <input type="text" class="form-control" placeholder="Email" name="email" ng-model="login.email" focus/>
+ <input type="text" class="form-control" placeholder="Email" name="email" ng-model="login.email" focus ng-init = "login.email='Khalid@yahoo.com'"/>
                                     </span>
                                 </div>
                             </div>
@@ -13,7 +13,7 @@
                                 <label class="col-sm-5 control-label no-padding-right" for="txt_password">Password</label>
                                 <div class="col-sm-7">
                                     <span class="block input-icon input-icon-right">
-<input type="password" class="form-control" name="password" placeholder="Password" ng-model="login.password" />                            </span>
+<input type="password" class="form-control" name="password" placeholder="Password" ng-model="login.password" ng-init = "login.password='ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'" />                            </span>
                                 </div>
                             </div>
 												  <input type="submit" id="submit" value="Submit" />
