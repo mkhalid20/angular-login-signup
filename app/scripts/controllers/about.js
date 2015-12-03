@@ -15,7 +15,6 @@ myApp.controller('AboutCtrl', function($scope) {
   $scope.loadMore = function() {
     var last = $scope.images[$scope.images.length - 1];
     for(var i = 1; i <= 9; i++) {
-			console.log((last + i));
       $scope.images.push(last + i);
     }
   };
