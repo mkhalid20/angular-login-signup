@@ -16,6 +16,8 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'infinite-scroll',
+
   ]);
 app.config(function ($routeProvider) {
     $routeProvider
