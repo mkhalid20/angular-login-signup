@@ -9,12 +9,21 @@
  */
 var myApp = angular.module('myTestAppApp');
 myApp.controller('ScrollpaginationCtrl', function($scope) {
-  $scope.images = [1, 2, 3, 4, 5, 6, 7, 8,9];
+  $scope.resultSet = [1, 2, 3, 4, 5, 6, 7, 8,9];
 
-  $scope.loadMore = function() {
-    var last = $scope.images[$scope.images.length - 1];
-    for(var i = 1; i <= 9; i++) {
-      $scope.images.push(last + i);
-    }
+  $scope.loadMore = function(limit) {
+			var last = $scope.resultSet[$scope.resultSet.length - 1];
+			getData(last, limit);
+    
   };
+	
+   function getData(offset, limit){
+    
+		var data = [];
+		for(var i = 1; i <= limit; i++) {
+      $scope.resultSet.push(offset + i);
+    }
+	}
+	
+	
 });

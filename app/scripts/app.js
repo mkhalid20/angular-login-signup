@@ -41,16 +41,17 @@ app.config(function ($routeProvider) {
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
-      .when('/scroll_pagination', {
-        templateUrl: 'views/scroll_pagination.html',
-        controller: 'ScrollPaginationCtrl',
-        controllerAs: 'scrollPagination'
-      })
       .when('/scrollpagination', {
         templateUrl: 'views/scrollpagination.html',
         controller: 'ScrollpaginationCtrl',
         controllerAs: 'scrollpagination'
       })
+      .when('/loadmore', {
+        templateUrl: 'views/loadmore.html',
+        controller: 'LoadmoreCtrl',
+        controllerAs: 'Loadmore'
+      })
+
       .otherwise({
         redirectTo: '/'
       });
