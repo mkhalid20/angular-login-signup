@@ -1,12 +1,10 @@
 'use strict';
-
 /**
  * @ngdoc overview
  * @name myTestAppApp
  * @description
- * # myTestAppApp
- *
- * Main module of the application.
+ * @myTestAppApp
+ * @Main module of the application.
  */
 var app = angular
   .module('myTestAppApp', [
@@ -17,7 +15,6 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'infinite-scroll',
-
   ]);
 app.config(function ($routeProvider) {
     $routeProvider
@@ -51,7 +48,6 @@ app.config(function ($routeProvider) {
         controller: 'LoadmoreCtrl',
         controllerAs: 'Loadmore'
       })
-
       .otherwise({
         redirectTo: '/'
       });
@@ -64,6 +60,5 @@ app.config(function ($httpProvider) {
             return data;
         }
         return $.param(data);
-
     };
 });

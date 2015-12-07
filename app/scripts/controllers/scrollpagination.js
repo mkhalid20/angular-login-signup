@@ -9,21 +9,20 @@
  */
 var myApp = angular.module('myTestAppApp');
 myApp.controller('ScrollpaginationCtrl', function($scope) {
-  $scope.resultSet = [1, 2, 3, 4, 5, 6, 7, 8,9];
+	$scope.pagedItems = [];
+
 
   $scope.loadMore = function(limit) {
-			var last = $scope.resultSet[$scope.resultSet.length - 1];
+			var length = $scope.pagedItems.length;
+			var last  = (length > 0)  ? (length-1) : length;
+			//var last = ($scope.pagedItems[itemOf]);
 			getData(last, limit);
-    
   };
 	
    function getData(offset, limit){
-    
-		var data = [];
-		for(var i = 1; i <= limit; i++) {
-      $scope.resultSet.push(offset + i);
-    }
+		for (var i=offset; i<limit+offset; i++) {
+    $scope.pagedItems.push({ id: i, name: "name "+ i, description: "description " + i });
+  }
+		
 	}
-	
-	
 });

@@ -1,10 +1,23 @@
-  <div ng-controller="LoadmoreCtrl" ng-init="showData()">
-    <ul>
-      <li class="paginationclass" ng-repeat="datalist in datalists | limitTo: paginationLimit()">
-        <div>Name : {{ datalist.name }} Age : {{ datalist.age }}</div>
-      </li>
-    </ul>
-    <div class="pagination pagination-centered">
-      <button class="show-more-btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Show more</button>
-    </div>
+  <div ng-controller="LoadmoreCtrl">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in pagedItems">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.description}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td colspan="3">
+          <button class="btn" href="#" ng-class="nextPageDisabledClass()" ng-click="loadMore(5)">Load More</button>
+        </td>
+      </tfoot>
+    </table>
   </div>

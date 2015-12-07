@@ -1,6 +1,6 @@
 <p>This is the scrollpagination view.</p>
-<div ng-app='myApp' ng-controller='ScrollpaginationCtrl'>
-  <div infinite-scroll='loadMore(3)' infinite-scroll-distance='2'>
-    <img ng-repeat='row in resultSet' ng-src='http://placehold.it/225x250&text={{row}}'>
+<div ng-app='myApp' ng-controller='LoadmoreCtrl'>
+  <div infinite-scroll='loadMore(6)' infinite-scroll-distance='2'>
+    <img ng-repeat='row in pagedItems' ng-src='http://placehold.it/225x250&text={{row.id}}'>
   </div>
 </div>
