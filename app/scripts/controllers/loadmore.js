@@ -10,18 +10,20 @@
 var app = angular.module('myTestAppApp');
 app.factory("Item", function() {
   var items = [];
-  for (var i=0; i<15; i++) {
-    items.push({ id: i, name: "name "+ i, description: "description " + i });
-  }
-  return {
+  var paginate = function getData(offset, limit){ 
+		for (var i=offset; i<limit+offset;i++) {
+    	items.push({ id: i, name: "name "+ i, description: "description " + i });
+  	}
+	}
+	return {
     get: function(offset, limit) {
       return items.slice(offset, offset+limit);
     },
     total: function() {
       return items.length;
-    }
-  };
-});
+    	}
+  	};
+	});
 
 app.controller("LoadmoreCtrl", function($scope, Item) {
 
