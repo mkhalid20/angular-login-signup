@@ -1,5 +1,5 @@
 'use strict';
-/**
+/*
  * @ngdoc overview
  * @name myTestAppApp
  * @description
@@ -15,6 +15,7 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'infinite-scroll',
+		'ezfb'
   ]);
 app.config(function ($routeProvider) {
     $routeProvider
@@ -48,12 +49,30 @@ app.config(function ($routeProvider) {
         controller: 'LoadmoreCtrl',
         controllerAs: 'Loadmore'
       })
+      .when('/fileupload', {
+        templateUrl: 'views/fileupload.html',
+        controller: 'FileuploadCtrl',
+        controllerAs: 'fileupload'
+      })
       .otherwise({
         redirectTo: '/'
-      });
+      });	
   });
 	
-app.config(function ($httpProvider) {
+
+app.config(function (ezfbProvider) {
+  /**
+   * Basic setup
+   *
+   * https://github.com/pc035860/angular-easyfb#configuration
+   */
+  ezfbProvider.setInitParams({
+    appId: '436245259897387'
+  });  
+});
+	
+	
+/*app.config(function ($httpProvider) {
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
     $httpProvider.defaults.transformRequest = function (data) {
         if (data === undefined) {
@@ -61,4 +80,13 @@ app.config(function ($httpProvider) {
         }
         return $.param(data);
     };
-});
+ });
+
+app.config(function ($httpProvider) {
+			 $httpProvider.defaults.useXDomain = true;
+       delete $httpProvider.defaults.headers.common['X-Requested-With'];
+ });*/
+
+
+
+

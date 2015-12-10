@@ -35,7 +35,7 @@ app.controller("LoadmoreCtrl", function($scope, Item) {
   $scope.loadMore = function(limit) {
 	$scope.itemsPerPage	=(limit != '') ? limit : $scope.itemsPerPage;
     $scope.currentPage++;
-    var newItems = Item.get($scope.currentPage*$scope.itemsPerPage, $scope.itemsPerPage);
+    var newItems = Item.get($scope.currentPage * $scope.itemsPerPage, $scope.itemsPerPage);
     $scope.pagedItems = $scope.pagedItems.concat(newItems);
   };
 
